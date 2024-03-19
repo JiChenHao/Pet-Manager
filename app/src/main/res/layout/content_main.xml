@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+    <!--可变的fragment，可自行替换内容，被包括在主界面中，方便替换-->
+    <!--这是一个特殊的fragment，NavHostFragment，用于控制导航，显示导航结果-->
+    <!--其中app:defaultNavHost="true"意思是该Fragment是默认的导航主机，
+    即所有针对navigation的动作都将由它来处理。
+    app:navGraph="@navigation/mobile_navigation" 在mobile_navigation.xml文件中
+    指定了几个fragment用与在导航进行跳转操作（导航图资源navGraph）
+
+    -->
+    <fragment
+        android:id="@+id/nav_host_fragment_content_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+</androidx.constraintlayout.widget.ConstraintLayout>
